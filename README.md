@@ -11,3 +11,9 @@ Il permet :
 ## Installation
  - Clone du projet sur un dépot local
  - Compiler avec visual studio
+
+## Version 1.0 
+Creation de ficher .txt par defaut
+
+## Version 2.0
+Creation de ficher sous tout les formats
