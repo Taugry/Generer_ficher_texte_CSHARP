@@ -32,7 +32,9 @@ try
     //personalisation du nom du ficher
     Console.WriteLine("Veuillez entrer le nom du ficher: ");
     string filename = Console.ReadLine();
-    string path = @"C:\Users\Portable\Desktop\" + filename + ".txt";
+    Console.WriteLine("Veuillez entrer l'extention du ficher: ");
+    string extention = Console.ReadLine();
+    string path = @"C:\Users\Portable\Desktop\" + filename + extention;
 
     // Vérifiez si le fichier existe déjà. Si oui, supprimez-le.    
     path = testnom(path);
