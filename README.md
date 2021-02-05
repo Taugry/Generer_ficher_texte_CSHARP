@@ -3,6 +3,7 @@
 Petit porgrame pour decouvrir le c#.
 Il permet :
 - de donner un nom au ficher
+- lui donner l'extention que l'on veut
 - verifier si ce ficher existe deja
 - si oui demande de suppression
 - ecrire ce que l'on veut
