@@ -4,7 +4,7 @@ using System.Text;
 
 //fonction pour ne pas re-ecrire sur un ficher deja existant
 //fonction recursive
-static string testnom(string path)
+static string testnom(string path, string ext)
 {
     string filename;
     if (File.Exists(path))
@@ -19,14 +19,15 @@ static string testnom(string path)
             //rentre le nouveau nom du ficher
             Console.WriteLine("Veuillez rentrer un autre nom pour le ficher :");
             filename = Console.ReadLine();
-            path = @"C:\Users\Portable\Desktop\" + filename + ".txt";
-            testnom(path);
+            path = @"C:\Users\Portable\Desktop\" + filename + "." + ext;
+            testnom(path, ext);
         }
     }
     return (path);
 }
 
-//program principal
+
+//programme principal
 try
 {
     //personalisation du nom du ficher
@@ -34,10 +35,10 @@ try
     string filename = Console.ReadLine();
     Console.WriteLine("Veuillez entrer l'extention du ficher: ");
     string extention = Console.ReadLine();
-    string path = @"C:\Users\Portable\Desktop\" + filename + extention;
+    string path = @"C:\Users\Portable\Desktop\" + filename + "." + extention;
 
     // Vérifiez si le fichier existe déjà. Si oui, supprimez-le.    
-    path = testnom(path);
+    path = testnom(path, extention);
 
     // creation du ficher et Ajouter du texte au fichier  
     Console.WriteLine("Veuillez entrer le texte pour le sauvegarder dans le ficher txt : ");
