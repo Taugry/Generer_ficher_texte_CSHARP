@@ -7,7 +7,6 @@ Il permet :
 - si oui demande de suppression
 - ecrire ce que l'on veut
 - puit il ecrit dans le ficher
-- ouvre automatiquement le ficher
 
 ## Installation
  - Clone du projet sur un dépot local
