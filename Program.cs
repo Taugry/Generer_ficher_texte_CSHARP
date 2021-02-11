@@ -26,6 +26,7 @@ static string testnom(string path, string ext)
         }
         else
         {
+            //recursive pour eviter une frappe autre que une lettre et autre que Y ou N
             Console.WriteLine("Veuillez utilisez Y/y ou N/n");
             testnom(path, ext);
         }
