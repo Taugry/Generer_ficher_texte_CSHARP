@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Web;
+using System.Diagnostics;
 
 //fonction pour ne pas re-ecrire sur un ficher deja existant
 //fonction recursive
@@ -14,12 +16,17 @@ static string testnom(string path, string ext)
         string res = Console.ReadLine();
         if (res == "Y" || res == "y")
             File.Delete(path);
-        if (res == "N" || res == "n")
+        else if (res == "N" || res == "n")
         {
             //rentre le nouveau nom du ficher
             Console.WriteLine("Veuillez rentrer un autre nom pour le ficher :");
             filename = Console.ReadLine();
             path = @"C:\Users\Portable\Desktop\" + filename + "." + ext;
+            testnom(path, ext);
+        }
+        else
+        {
+            Console.WriteLine("Veuillez utilisez Y/y ou N/n");
             testnom(path, ext);
         }
     }
@@ -44,6 +51,7 @@ try
     Console.WriteLine("Veuillez entrer le texte pour le sauvegarder dans le ficher txt : ");
     string text = Console.ReadLine();
     System.IO.File.WriteAllText(path, text);
+    Process.Start("cmd", "/C " + "start notepad "+path);
 }
 catch (System.IO.IOException e)
 {
